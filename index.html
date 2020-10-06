@@ -1,0 +1,82 @@
+<!--
+ * @Description: 
+ * @Version: 0.0.1.0
+ * @Vender: D-link
+ * @Author: YueXiangling
+ * @Date: 2020-10-06 20:24:01
+ * @LastEditNote: 
+ * @LastEditors: YueXiangling
+ * @LastEditTime: 2020-10-06 22:20:37
+-->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8' />
+    <title>吃豆人</title>
+    <meta name="viewport" content="width=750,target-densitydpi=device-dpi,user-scalable=no" />
+    <!-- <meta name='viewport' content='width=750,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no' /> -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body,
+        html {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .box {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .box canvas {
+            position: relative;
+            z-index: 10;
+            width: 710px;
+            /*width: 710px;*/
+            height: 1056px;
+            /*background-color: #eee;*/
+        }
+
+        .box img {
+            width: 710px;
+            height: 1056px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <img src="images/bg.png">
+        <canvas id="myCvs"></canvas>
+    </div>
+    <script src="Fish.js"></script>
+    <script src="main.js"></script>
+    <script>
+        window.onload = function () {
+            var main = new Main({
+                el: '#myCvs',
+                paths: {
+                    bg: 'images/bg.png',
+                },
+            });
+
+        }
+    </script>
+</body>
+
+</html>
